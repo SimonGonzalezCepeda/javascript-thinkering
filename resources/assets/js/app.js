@@ -13,43 +13,21 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+var Animals = require('./Animal');
+/*var cat = require('./Cat');
+var dog = require('./Dog');
+*/
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
     el: '#app'
 });
 
+var animal = new Animals.Animal();
+/*var cat = new Cat();
+var dog = new Dog();
 
-/* Codi d'herencia */
-
-var Animal = function() {
-    if(this.constructor === Animal) {
-        throw new Error("Can't instantiate abstract class!");
-    }
-};
-
-
-/* Abstract methods */
-
-Animal.prototype.say = function(){
-    throw new Error("Abstract method!");
-};
-
-/* Eat some food */
-
-Animal.prototype.eat = new function() {
-    console.log(" is eating.");
-};
-
-/* Com instanciar un hereu: Syntax Sugar */
-
-var Cat = function () {
-    Animal.apply(this, arguments);
-};
-
-Cat.prototype = Object.create(Animal.prototype);
-Cat.prototype.constructor = Cat;
-
-Cat.prototype.say = function(){
-    console.log("meow");
-};
+dog.eat();
+dog.say();
+cat.eat();
+cat.say();*/
